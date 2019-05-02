@@ -7,7 +7,7 @@ class Hand
 
   def initialize(card_list=CardList.new)
     @card_list = card_list
-    @standing = true
+    @standing = false
   end
 
   def hit(card_class=Card)
@@ -15,6 +15,7 @@ class Hand
     raise "You're standing" if standing?
     card_list.add(card_class.random)
   end
+
 
   def stand
     self.standing = true
